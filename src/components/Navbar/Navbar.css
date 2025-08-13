@@ -1,0 +1,138 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: white; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+.logo h1{
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -5px;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: black;
+}
+
+.logo h1::first-letter {
+    color: #e74c3c;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu hr {
+    border: none;
+    height: 2px;
+    background-color: #e74c3c;
+    margin: 0;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-item a:hover {
+    color: #e74c3c;
+}
+
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e74c3c;
+    transition: width 0.3s ease;
+}
+
+.nav-item a:hover::after {
+    width: 100%;
+}
+.nav-item .active {
+    color: #e74c3c !important;
+}
+
+.nav-item .active::after {
+    width: 100% !important;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.login-btn {
+    padding: 0.6rem 1.5rem;
+    background-color: transparent;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        margin: 1rem 0;
+        gap: 1rem;
+    }
+}

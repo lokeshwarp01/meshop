@@ -1,0 +1,163 @@
+.hero {
+  background-color: #f9f9f9;
+  padding: 4rem 5%;
+  margin-top: 0;
+}
+
+
+.hero-content {
+  padding-top: 2rem; 
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-subtitle {
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.hero-description {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.shop-now-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.shop-now-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.shop-now-btn img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.category-btn {
+  background-color: transparent;
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-image {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
