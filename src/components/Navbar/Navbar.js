@@ -1,11 +1,19 @@
 import React from 'react';
 import './Navbar.css';
 import carticon from '../MyAssets/cart_icon.png';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-export const Navbar = () => {
-    const [activeLink, setActiveLink] = useState("home");
+export const Navbar = ({ cartCount = 0 }) => {
+    const location = useLocation();
+    
+    const getActiveLink = () => {
+        if (location.pathname === '/') return 'home';
+        if (location.pathname === '/mens') return 'men';
+        if (location.pathname === '/womens') return 'women';
+        if (location.pathname === '/kids') return 'Kids';
+        return '';
+    };
+
     return (
         <nav className='navbar'>
             <div className='logo'>
@@ -16,16 +24,15 @@ export const Navbar = () => {
                 <li className='nav-item'>
                     <Link
                         to="/"
-                        className={activeLink === "home" ? "active" : ""}
-                        onClick={() => setActiveLink("home")}>
+                        className={getActiveLink() === "home" ? "active" : ""}
+                    >
                         Home
                     </Link>
                 </li>
                 <li className='nav-item'>
                     <Link
                         to="/mens"
-                        className={activeLink === "men" ? "active" : ""}
-                        onClick={() => setActiveLink("men")}
+                        className={getActiveLink() === "men" ? "active" : ""}
                     >
                         Men
                     </Link>
@@ -33,8 +40,7 @@ export const Navbar = () => {
                 <li className='nav-item'>
                     <Link
                         to="/womens"
-                        className={activeLink === "women" ? "active" : ""}
-                        onClick={() => setActiveLink("women")}
+                        className={getActiveLink() === "women" ? "active" : ""}
                     >
                         Women
                     </Link>
@@ -42,8 +48,7 @@ export const Navbar = () => {
                 <li className='nav-item'>
                     <Link
                         to="/kids"
-                        className={activeLink === "Kids" ? "active" : ""}
-                        onClick={() => setActiveLink("Kids")}
+                        className={getActiveLink() === "Kids" ? "active" : ""}
                     >
                         Kids
                     </Link>
@@ -53,10 +58,14 @@ export const Navbar = () => {
             <div className='nav-actions'>
                 <Link to="/login"><button className='login-btn'>Login</button></Link>
                 <div className='cart-icon'>
-                    <Link to="/Cart"><img src={carticon} alt="Cart" />
-                        <span className='cart-count'>0</span></Link>
+                    <Link to="/cart">
+                        <img src={carticon} alt="Cart" />
+                        {cartCount > 0 && (
+                            <span className='cart-count'>{cartCount}</span>
+                        )}
+                    </Link>
                 </div>
             </div>
         </nav>
     );
-}
+};

@@ -17,8 +17,8 @@ export const Footer = () => {
           <div className="footer-column">
             <h3>Shop</h3>
             <ul>
-              <li><Link to="/men">Men</Link></li>
-              <li><Link to="/women">Women</Link></li>
+              <li><Link to="/mens">Men</Link></li>
+              <li><Link to="/womens">Women</Link></li>
               <li><Link to="/kids">Kids</Link></li>
               <li><Link to="/new-arrivals">New Arrivals</Link></li>
             </ul>

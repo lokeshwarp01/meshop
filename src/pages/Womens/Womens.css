@@ -97,8 +97,8 @@
 .view {
   width: 100%;
   padding: 0.5rem;
-  background-color: #70706f;
-  border: none;
+  background-color: white;
+  border: 1px solid black;
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
