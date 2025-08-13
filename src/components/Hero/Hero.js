@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hero.css';
-import heroImage from '../Assets/Fashion.png'; 
-import arrowIcon from '../Assets/arrow.png';
+import heroImage from '../MyAssets/Fashion.png'; 
+import arrowIcon from '../MyAssets/arrow.png';
 
 export const Hero = () => {
   return (

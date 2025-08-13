@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.css';
-import carticon from '../Assets/cart_icon.png';
+import carticon from '../MyAssets/cart_icon.png';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 

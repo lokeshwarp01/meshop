@@ -48,6 +48,7 @@ export const Footer = () => {
 
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} meshop. All rights reserved.</p>
+        <p>Made with ❤️ by PANUGANTI LOKESHWAR using REACT JS</p>
       </div>
     </footer>
   );
