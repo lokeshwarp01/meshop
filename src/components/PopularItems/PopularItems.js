@@ -25,35 +25,38 @@ const PopularItems = () => {
     <div className="product-row" key={title}>
       <div className="row-header">
         <h3 className="row-title">{title}</h3>
-        <Link to={`/${category}`} className="row-view-all">
+        {/* <Link to={`/${category}`} className="row-view-all">
           View All →
-        </Link>
+        </Link> */}
       </div>
       <div className="products-grid">
         {products.map(product => (
-          <div key={product.id} className="product-card">
-            {product.discount > 0 && (
-              <div className="discount-badge">-{product.discount}%</div>
-            )}
-            <img 
-              src={product.image} 
-              alt={product.title} 
-              className="product-image"
-            />
-            <div className="product-info">
-              <h4 className="product-title">{product.title}</h4>
-              <div className="product-price">
-                <span className="new-price">₹{product.newPrice.toFixed(2)}</span>
-                {product.discount > 0 && (
-                  <span className="old-price">₹{product.oldPrice.toFixed(2)}</span>
-                )}
-              </div>
-              <div className="product-rating">
-                {'★'.repeat(Math.floor(product.rating))}
-                {'☆'.repeat(5 - Math.floor(product.rating))}
+          <Link to={`/product/${product.id}`} key={product.id} className="product-card-link">
+            <div className="product-card">
+              {product.discount > 0 && (
+                <div className="discount-badge">-{product.discount}%</div>
+              )}
+              <img 
+                src={product.image} 
+                alt={product.title} 
+                className="product-image"
+                loading="lazy"
+              />
+              <div className="product-info">
+                <h6 className="product-title">{product.title}</h6>
+                <div className="product-price">
+                  <span className="new-price">₹{product.newPrice.toFixed(2)}</span>
+                  {product.discount > 0 && (
+                    <span className="old-price">₹{product.oldPrice.toFixed(2)}</span>
+                  )}
+                </div>
+                <div className="product-rating">
+                  {'★'.repeat(Math.floor(product.rating))}
+                  {'☆'.repeat(5 - Math.floor(product.rating))}
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
@@ -66,7 +69,7 @@ const PopularItems = () => {
       {renderProductRow(menProducts, "Popular with Men", "men")}
       {renderProductRow(womenProducts, "Popular with Women", "women")}
       {renderProductRow(kidsProducts, "Popular with Kids", "kids")}
-      {renderProductRow(discountProducts, "Hot Deals - High Discount", "discount")}
+      {renderProductRow(discountProducts, "Hot Deals", "discount")}
     </div>
   );
 };

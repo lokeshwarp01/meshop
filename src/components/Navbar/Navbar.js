@@ -23,7 +23,7 @@ export const Navbar = () => {
                 </li>
                 <li className='nav-item'>
                     <Link
-                        to="/men"
+                        to="/mens"
                         className={activeLink === "men" ? "active" : ""}
                         onClick={() => setActiveLink("men")}
                     >
@@ -32,7 +32,7 @@ export const Navbar = () => {
                 </li>
                 <li className='nav-item'>
                     <Link
-                        to="/women"
+                        to="/womens"
                         className={activeLink === "women" ? "active" : ""}
                         onClick={() => setActiveLink("women")}
                     >
