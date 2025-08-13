@@ -2,13 +2,13 @@ import './App.css';
 import { Navbar } from './components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home';
+import Kids from './components/Kids/Kids';
+import Mens from './components/Mens/Mens';
+import Womens from './components/Womens/Womens';
 import Cart from './pages/Cart';
 import LoginSignup from './pages/LoginSignup';
 import NotFound from './components/NotFound/NotFound';
 import { Footer } from './components/Footer/Footer';
-import Kids from './context/Kids/Kids';
-import Mens from './context/Mens/Mens';
-import Womens from './context/Womens/Womens';
 
 function App() {
   return (
