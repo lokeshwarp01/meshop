@@ -24,7 +24,7 @@ function App() {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const cartCount = cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
 
   const addToCart = (product) => {
     setCartItems(prevItems => {
@@ -35,18 +35,29 @@ function App() {
       );
       
       if (existingItem) {
-        toast.success(`${product.title} quantity updated!`);
+        const newQuantity = existingItem.quantity + product.quantity;
+        if (newQuantity > (product.stock || 10)) {
+          toast.error(`Only ${product.stock || 10} available in stock!`);
+          return prevItems;
+        }
+        
+        toast.success(`${product.title} quantity updated to ${newQuantity}!`);
         return prevItems.map(item =>
           item.id === product.id && 
           item.selectedSize === product.selectedSize && 
           item.selectedColor === product.selectedColor
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: newQuantity }
             : item
         );
       }
       
+      if (product.stock <= 0) {
+        toast.error(`${product.title} is out of stock!`);
+        return prevItems;
+      }
+      
       toast.success(`${product.title} added to cart!`);
-      return [...prevItems, { ...product, quantity: 1 }];
+      return [...prevItems, { ...product }];
     });
   };
 
@@ -63,6 +74,11 @@ function App() {
 
   const updateQuantity = (product, quantity) => {
     if (quantity < 1) return;
+    if (quantity > (product.stock || 10)) {
+      toast.error(`Only ${product.stock || 10} available in stock!`);
+      return;
+    }
+    
     setCartItems(prevItems =>
       prevItems.map(item =>
         item.id === product.id && 
