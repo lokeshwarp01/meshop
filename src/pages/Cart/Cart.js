@@ -27,7 +27,7 @@ const Cart = ({ cartItems, removeFromCart, updateQuantity }) => {
       {cartItems.length === 0 ? (
         <div className="empty-cart">
           <p>Your cart is empty</p>
-          <Link to="/" className="continue-shopping-btn">Continue Shopping</Link>
+          <Link to="/meshop/" className="continue-shopping-btn">Continue Shopping</Link>
         </div>
       ) : (
         <div className="cart-content">
@@ -90,7 +90,7 @@ const Cart = ({ cartItems, removeFromCart, updateQuantity }) => {
               <span>₹{calculateTotal().toFixed(2)}</span>
             </div>
             <button className="checkout-btn">Proceed to Checkout</button>
-            <Link to="/" className="continue-shopping-link">Continue Shopping</Link>
+            <Link to="/meshop/" className="continue-shopping-link">Continue Shopping</Link>
           </div>
         </div>
       )}
