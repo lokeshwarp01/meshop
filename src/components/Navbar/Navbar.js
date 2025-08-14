@@ -23,7 +23,7 @@ export const Navbar = ({ cartCount = 0 }) => {
             <ul className='nav-menu'>
                 <li className='nav-item'>
                     <Link
-                        to="/"
+                        to="/meshop/"
                         className={getActiveLink() === "home" ? "active" : ""}
                     >
                         Home

@@ -106,7 +106,7 @@ function App() {
           pauseOnHover
         />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/meshop/" element={<Home />} />
           <Route path="/mens" element={<Mens />} />
           <Route path="/womens" element={<Womens />} />
           <Route path="/kids" element={<Kids />} />
