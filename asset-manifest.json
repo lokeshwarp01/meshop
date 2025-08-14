@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/meshop/static/css/main.7df7c57e.css",
-    "main.js": "/meshop/static/js/main.d50b992e.js",
+    "main.js": "/meshop/static/js/main.dca014e1.js",
     "static/js/453.161178da.chunk.js": "/meshop/static/js/453.161178da.chunk.js",
     "static/media/Dress Shoes.png": "/meshop/static/media/Dress Shoes.2938abb11a6e1e7f04de.png",
     "static/media/Kids Winter Jacket.png": "/meshop/static/media/Kids Winter Jacket.f6d388b08513963599c7.png",
@@ -52,11 +52,11 @@
     "static/media/Kids Rain Boots.png": "/meshop/static/media/Kids Rain Boots.5655b471e21e4c2a47ad.png",
     "index.html": "/meshop/index.html",
     "main.7df7c57e.css.map": "/meshop/static/css/main.7df7c57e.css.map",
-    "main.d50b992e.js.map": "/meshop/static/js/main.d50b992e.js.map",
+    "main.dca014e1.js.map": "/meshop/static/js/main.dca014e1.js.map",
     "453.161178da.chunk.js.map": "/meshop/static/js/453.161178da.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7df7c57e.css",
-    "static/js/main.d50b992e.js"
+    "static/js/main.dca014e1.js"
   ]
 }
